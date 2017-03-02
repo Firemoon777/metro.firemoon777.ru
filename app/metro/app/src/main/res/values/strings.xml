@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Metronome</string>
+
+    <string name="carriage_list_title">Список вагонов</string>
+
+    <string name="nav_add_carriage">Добавить вагон</string>
+    <string name="nav_slideshow">Список вагонов</string>
+
+    <string name="refresh">Обновить</string>
+    <string name="sync">Синхронизировать</string>
+
+    <string name="navigation_drawer_open">Legacy</string>
+    <string name="navigation_drawer_close">Legacy</string>
+</resources>
