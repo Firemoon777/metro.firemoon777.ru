@@ -1,0 +1,24 @@
+<?php
+include_once 'connect.php';
+header('Content-Type: text/html; charset=utf-8');
+
+$number = $_GET['number'];
+$line = $_GET['line'];
+
+if(!is_numeric($number) || !is_numeric($line)) {
+	echo json_encode(array('Status' => '1', 'request' => $_GET));
+	exit();
+}
+
+$args = array('Number' => $number, 'Line' => $line);
+if(isset($_GET['model'])) {
+	array_push($args, SQL::safeEncodeString($_GET['model']));
+}
+
+$data = SQL::INSERT_set('carriage', $args);
+if($data) {
+	echo json_encode(array('Status' => '0', 'request' => $_GET));
+} else {
+	echo json_encode(array('Status' => '-1', 'request' => $_GET));
+}
+?>

@@ -1,0 +1,3 @@
+# Теперь PHP-скрипты могут иметь неизвестные типы файлов
+AddType application/x-httpd-php .add .get
+AddType application/x-httpd-php5 .add .get
