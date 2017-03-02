@@ -1,9 +1,16 @@
 <?php
 include_once 'connect.php';
+include_once 'passwords.php';
+
 header('Content-Type: text/html; charset=utf-8');
 
 $number = $_GET['number'];
 $line = $_GET['line'];
+
+if(!isset($_GET['token']) || $_GET['token'] != $auth_token) {
+	header('HTTP/1.0 403 Forbidden');
+	exit();
+}
 
 if(!is_numeric($number) || !is_numeric($line)) {
 	echo json_encode(array('Status' => '1', 'request' => $_GET));
